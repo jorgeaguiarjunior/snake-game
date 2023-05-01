@@ -1,0 +1,66 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #24434b;
+}
+
+#map{
+	/*Necessário deixar essas dimensões para fazer um retangulo com numero impar de colunas
+	Dessa forma eu uso 80 da altura da tela para fazer a altura do retangulo,
+	e 150% da altura da tela para fazer a largura do retangulo*/
+	width: 150vh;
+	height: 80vh;
+	display: grid;
+	/*Defino o template do meu grid com 15 colunas com 1 fração do tamanho da tela, e automaticamente terá 8 linhas*/
+	grid-template-columns: repeat(21, 1fr);
+	background-color: #f6edab;
+}
+
+.map-position{
+	border: 1px solid black;
+}
+
+#title{
+	width: 100vw;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+#restart{
+	width: 100vw;
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#restart button{
+	width: 150px;
+	height: 50px;
+}
+
+#start{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 150vh;
+	height: 80vh;
+	background-color: black;
+	opacity: 0.7;
+	color: white;
+}
