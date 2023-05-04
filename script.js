@@ -2,6 +2,8 @@ let start = document.getElementById("start");
 let title = document.getElementById("title");
 let map = document.getElementById("map");
 let restart = document.getElementById("restart");
+let score = document.getElementById("score");
+let scoreValue = 0;
 // Variavel usada para saber para qual lado a cobrinha está andando (ela inicia andando para cima)
 let target = 'w';
 let startGame = false;
@@ -73,6 +75,7 @@ document.addEventListener('keypress', function (e) {
 		}
 		startGame = true;
 		foodRespawn();
+		score.innerHTML = scoreValue;
 		//A cobrinha precisa ficar em constante movimento, portanto terá esse setInterval executando o movimento
 		myInterval = setInterval(() => {
 			move();
@@ -176,6 +179,7 @@ async function move() {
 			}
 		}
 		printSnake();
+		mapPositions[randomLine][randomColumn].style.backgroundColor = "#fe6e52";
 	} else {
 		// Finalizo o meu setInterval
 		clearInterval(myInterval);
@@ -212,11 +216,13 @@ let foodRespawn = () => {
 	// Guardo essa posição em um objeto
 	foodPosition = new Nodo(randomLine, randomColumn);
 	// Adiciono ele ao meu mapa
-	mapPositions[randomLine][randomColumn].style.backgroundColor = "#fe6e52";
+	// mapPositions[randomLine][randomColumn].style.backgroundColor = "#fe6e52";
 }
 
 let foodColision = () => {
 	if (JSON.stringify(snake[0]) == JSON.stringify(foodPosition)) {
+		scoreValue++;
+		score.innerHTML = scoreValue;
 		return true;
 	}
 	return false;

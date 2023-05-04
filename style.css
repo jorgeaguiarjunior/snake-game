@@ -28,6 +28,7 @@ body{
 
 .map-position{
 	border: 1px solid black;
+	border-radius: 10%;
 }
 
 #title{
@@ -37,6 +38,15 @@ body{
 	align-items: center;
 	justify-content: center;
 	color: white;
+}
+
+#title h1{
+	padding-right: 30px;
+}
+
+#score{
+	width: 50px;
+	padding: 5px;
 }
 
 #restart{
